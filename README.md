@@ -3,7 +3,7 @@
 This repository contains the codes and resources for the project:
 > **"Emergency Detection System for Public Restrooms"**
 >
-> Junho Lee, Seunghyun Seo
+> Junho Lee, Seunghyun Suh
 >
 > Department of Convergence Electronic Engineering, Hanyang University
 
