@@ -3,7 +3,7 @@
 This repository contains the codes and resources for the project:
 > **"Emergency Detection System for Public Restrooms"**
 >
-> Junho Lee, Seunghyun Suh
+> Junho Lee, Seunghyeon Suh
 >
 > Department of Convergence Electronic Engineering, Hanyang University
 
@@ -58,6 +58,7 @@ python evaluate.py
 
 
 ## 3. System Features
+
 | Stage | Description | Applied Technology |
 |:-----|:------------|:-------------------|
 | Person Detection and Tracking | Real-time recognition and tracking of individuals entering/exiting the restroom | YOLO with SORT, OpenCV |
@@ -80,6 +81,13 @@ python evaluate.py
 - Enhanced public safety in restrooms without intrusive continuous surveillance.
 
 
+## :camera: System Diagram
+
+<img src="./assets/system_flowchart.png" alt="System Flowchart" width="700"/>
+
+*Figure 1. System Flow: From entry detection to abnormality matching and emergency notification.*
+
+
 ## Technology Stack
 - Python
 - PyTorch
@@ -91,6 +99,6 @@ python evaluate.py
 
 ## Contact
 - Junho Lee: oran03@hanyang.ac.kr
-- Seunghyun Seo: logi1000@hanyang.ac.kr
+- Seunghyeon Suh: logi1000@hanyang.ac.kr
 
 
