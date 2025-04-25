@@ -93,5 +93,4 @@ python evaluate.py
 - Junho Lee: oran03@hanyang.ac.kr
 - Seunghyun Seo: logi1000@hanyang.ac.kr
 
----
-Thank you for your interest in our project!
+
