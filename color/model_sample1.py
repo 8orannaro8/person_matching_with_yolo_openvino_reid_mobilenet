@@ -19,7 +19,12 @@ NUM_EPOCHS = 5
 IMG_SIZE = 224
 TOTAL_SAMPLE_SIZE = 50000
 DATA_PATH = r"D:\fashion\Training\preprocessed\train.pkl"
+ENCODER_PATH = r"D:\fashion\Training\preprocessed\label_encoders.pkl"
 CLOTHES = ['상의', '하의', '아우터', '원피스']
+
+# -------------------- 인코더 로딩 --------------------
+with open(ENCODER_PATH, 'rb') as f:
+    category_encoders, color_encoders = pickle.load(f)
 
 # -------------------- 샘플링 --------------------
 def sample_data(data_path, sample_size):
@@ -46,24 +51,6 @@ def sample_data(data_path, sample_size):
     return sampled
 
 samples = sample_data(DATA_PATH, TOTAL_SAMPLE_SIZE)
-
-# -------------------- 라벨 인코딩 --------------------
-category_encoders = {c: LabelEncoder() for c in CLOTHES}
-color_encoders = {c: LabelEncoder() for c in CLOTHES}
-
-def prepare_labels(samples):
-    cat_labels = {c: [] for c in CLOTHES}
-    col_labels = {c: [] for c in CLOTHES}
-    for s in samples:
-        for c in CLOTHES:
-            label = s['label'].get(c)
-            cat_labels[c].append(label['category'] if label else 'None')
-            col_labels[c].append(label['color'] if label else 'None')
-    for c in CLOTHES:
-        category_encoders[c].fit(cat_labels[c])
-        color_encoders[c].fit(col_labels[c])
-
-prepare_labels(samples)
 
 # -------------------- Dataset 정의 --------------------
 class FashionDataset(Dataset):
@@ -169,6 +156,8 @@ for epoch in range(NUM_EPOCHS):
         total_loss += loss.item()
     print(f"[Epoch {epoch+1}] Loss: {total_loss:.4f}")
     evaluate(model, eval_loader)
+
+# -------------------- 저장 --------------------
 MODEL_SAVE_PATH = "fashion_mobilenet.pth"
 torch.save(model.state_dict(), MODEL_SAVE_PATH)
 print(f"[INFO] 모델 저장 완료: {MODEL_SAVE_PATH}")
