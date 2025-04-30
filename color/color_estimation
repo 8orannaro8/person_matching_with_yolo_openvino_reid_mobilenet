@@ -5,7 +5,7 @@ AI HUB에서 K-Fashion 이미지 데이터 셋 다운로드
 해당 파일에는 각 json 파일에서 선별된 label 및 해당 이미지 경로가 함께 들어있음
 
 모델 학습은 model_sample1.py에서 진행
-약 96만장에 대하여 bs = 128, Epochs = 5, lr = 1e-4로 학습 진행 
+약 96만장에 대하여 bs = 128, Epochs = 5, lr = 1e-4 = 10^(-4)로 학습 진행 
 TOTAL_SAMPLE_SIZE를 변경하여 학습시 몇 개의 이미지에 대하여 진행할지를 선택 
 mobilenet_v2(weights = 'IMAGENET1K_V1').featuers 부분을 통해 모바일넷, 사전 이미지넷으로 학습된 가중치를 사용
 이미지넷 데이터셋은 현재 학습하길 원하는 모델과는 거리가 멀어 초기 가중치가 없는, 랜덤상태로 진행할지에 대한 것은 추후 결정
