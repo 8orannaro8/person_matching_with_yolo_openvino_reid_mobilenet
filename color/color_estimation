@@ -1,1 +1,23 @@
-color_esti
+1세대
+AI HUB에서 K-Fashion 이미지 데이터 셋 다운로드
+해당 데이터 셋의 json 파일 label 중 color, category만 선별 (json_smart_copy)
+선별된 파일은 train.pkl 저장
+해당 파일에는 각 json 파일에서 선별된 label 및 해당 이미지 경로가 함께 들어있음
+
+모델 학습은 model_sample1.py에서 진행
+약 96만장에 대하여 bs = 128, Epochs = 5, lr = 1e-4로 학습 진행 
+TOTAL_SAMPLE_SIZE를 변경하여 학습시 몇 개의 이미지에 대하여 진행할지를 선택 
+mobilenet_v2(weights = 'IMAGENET1K_V1').featuers 부분을 통해 모바일넷, 사전 이미지넷으로 학습된 가중치를 사용
+이미지넷 데이터셋은 현재 학습하길 원하는 모델과는 거리가 멀어 초기 가중치가 없는, 랜덤상태로 진행할지에 대한 것은 추후 결정
+학습이 진행된 다음 가중치는 fashion_mobilenet.pth라는 이름으로 저장되어 추론에 사용
+기존 학습 파일에서 개별 인코딩 진행 --- fixed(외부 파일에서 진행 후 불러옴)
+
+save_label_encoder
+문자열로 된 라벨을 정수형으로 변환
+학습과 추론시 라벨을 일관된 방식으로 디코딩 인코딩하기 위해 필요
+
+model_eval_fix
+학습된 모델을 이용한 추론 
+라벨 인코더 가중치 등 불러오고 이미지 전처리
+추론 결과 중 상위 2개에 대해서 확률 및 결과를 보여줌
+
