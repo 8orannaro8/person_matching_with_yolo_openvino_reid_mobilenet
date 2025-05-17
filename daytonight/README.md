@@ -2,7 +2,7 @@
 ![image](https://github.com/user-attachments/assets/f53a7bf8-4652-4714-8874-e327aadbb534)
 
 
-```
+
 # High-Resolution Day-to-Night Image Translation with ResNet-based CycleGAN
 
 This project performs **high-resolution image translation from day to night** using a ResNet-based generator, as originally proposed in [CycleGAN](https://arxiv.org/abs/1703.10593). It processes large images in patches to preserve detail and enables high-quality conversion without reducing resolution.
@@ -20,7 +20,7 @@ This project performs **high-resolution image translation from day to night** us
 
 ## 📁 Folder Structure
 
-```
+
 
 project\_root/
 │
