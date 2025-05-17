@@ -3,7 +3,7 @@ This is a Python script to auto-detect and auto-crop a person in a image.
 
 This script uses **Tensorflow** and **SSD Mobilenet V2 (COCO)** to recognize people in a photo, then crop the photo to the single person.
 
-![example](https://github.com/northumber/person_autocrop/assets/17114557/bd3d352a-de33-4583-bba3-62ea77b844ab)
+
 
 ### Specifications
 - Windows and Linux command-line auto-install scripts
